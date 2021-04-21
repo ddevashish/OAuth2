@@ -1,6 +1,9 @@
 const express = require('express');
 const passport = require('passport');
 const cookieSession = require('cookie-session');
+require('dotenv').config();
+
+const PORT = process.env.PORT || 3000;
 require('./passport-setup');
 
 const app = express();
@@ -53,4 +56,4 @@ app.get('/api/logout', (req, res) => {
     res.redirect('/');
 })
 
-app.listen(3000, () => console.log(`Example app listening on port ${3000}!`))
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
